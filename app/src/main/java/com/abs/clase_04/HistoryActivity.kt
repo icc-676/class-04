@@ -1,6 +1,7 @@
 package com.abs.clase_04
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,6 +12,8 @@ class HistoryActivity : AppCompatActivity() {
     companion object {
         var OPERATIONS = "OPERATIONS"
     }
+
+    val TAG = "HISTORIC State"
 
     private var operations: ArrayList<String> = ArrayList()
     var historyList = ArrayList<HistoricItem>()
@@ -35,7 +38,16 @@ class HistoryActivity : AppCompatActivity() {
             historyList.add(HistoricItem(operation = it,result = result))
             recycler_view.adapter?.notifyItemInserted(historyList.size - 1)
         }
+    }
 
+    override fun onStop() {
+        super.onStop()
+        Log.i(TAG,"OnStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i(TAG,"OnDestroy")
     }
 
 }

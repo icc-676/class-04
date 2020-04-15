@@ -11,11 +11,4 @@
         android:text="operación"
         android:textSize="28sp"/>
 
-    <TextView
-        android:id="@+id/resultTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:text="resultado"
-        android:textSize="28sp"/>
 </LinearLayout>

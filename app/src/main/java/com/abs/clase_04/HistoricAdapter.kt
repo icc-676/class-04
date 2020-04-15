@@ -3,6 +3,7 @@ package com.abs.clase_04
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.historic_cell.view.*
 
@@ -32,7 +33,9 @@ class HistoricAdapter(private val historicList: List<HistoricItem>) :
         fun bindHistoric(item: HistoricItem) {
             this.item = item
             view.operationTextView.text = item.operation
-            view.resultTextView.text = item.result
+            view.setOnClickListener {
+                Toast.makeText(it.context,item.result, Toast.LENGTH_LONG).show()
+            }
         }
     }
 }
